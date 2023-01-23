@@ -37,7 +37,7 @@ foreach ($db as $data) {
                 <div class="col p-5 bg-dark text-white d-flex flex-column justify-content-center gap-4">
                     <h2 class="mb-4">Update Data</h2>
                     <form action="proses_edit.php" method="GET">
-                        <input type="number" name="nik" value="<?php echo $nik ?>" readonly>
+                        <input type="hidden" name="nik" value="<?php echo $nik ?>" readonly>
                         <input type="text" name="name" placeholder="Nama Lengkap" id="" value="<?php echo $data['nama'] ?>" required>
 
                         <input type="number" name="phone" placeholder="No Hp" value="<?php echo $data['no_hp'] ?>" id="" required>
