@@ -2,7 +2,7 @@
 include_once("koneksi.php");
 $nik = $_GET['nik'];
 
-$db = mysqli_query($koneksi, "SELECT * FROM data_vaksinasi WHERE nik=${nik}");
+$db = mysqli_query($koneksi, "SELECT * FROM users WHERE nik= $nik");
 
 foreach ($db as $data) {
 }
@@ -37,16 +37,11 @@ foreach ($db as $data) {
                 <div class="col p-5 bg-dark text-white d-flex flex-column justify-content-center gap-4">
                     <h2 class="mb-4">Update Data</h2>
                     <form action="proses_edit.php" method="GET">
-                        <input type="text" name="nomor" value="<?php echo $nik ?>" readonly>
+                        <input type="number" name="nik" value="<?php echo $nik ?>" readonly>
                         <input type="text" name="name" placeholder="Nama Lengkap" id="" value="<?php echo $data['nama'] ?>" required>
 
                         <input type="number" name="phone" placeholder="No Hp" value="<?php echo $data['no_hp'] ?>" id="" required>
-                        <select name="location" placeholder="Lokasi Vaksinasi" class="form-select p-0" aria-label="Default select example" required>
-                            <option value="Telkom University">Telkom University</option>
-                            <option value="BBKPM Bandung">BBKPM Bandung</option>
-                            <option value="KKP Kelas 1 Bandung">KKP Kelas 1 Bandung</option>
-                            <option value="RSKIA Bandung">RSKIA Bandung</option>
-                            </select>
+                        <input type="text" name="alamat" placeholder="Alamat" value="<?php echo $data['alamat'] ?>"  id="" required>
                             <button class="submit">EDIT</button>
                     </form>
                 </div>

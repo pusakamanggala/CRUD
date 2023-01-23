@@ -5,19 +5,19 @@ include_once("koneksi.php");
 $intnik = $_POST['nik'];
 $varnama = $_POST['name'];
 $intno_hp = $_POST['phone'];
-$varlokasi_vaksin = $_POST['location'];
+$varalamat = $_POST['alamat'];
 
-$simpan = "insert into data_vaksinasi values ('$intnik', '$varnama', '$intno_hp', '$varlokasi_vaksin')";
+$simpan = "insert into users values ('$intnik', '$varnama', '$varalamat', '$intno_hp', 0)";
 if ($koneksi->query($simpan)) {
     echo "<script> 
                     alert('SUBMIT BERHASIL'); 
                     </script>";
-
+                    header("Location:read.php");
 } else {
     echo "<script> 
-                    alert('SUBMIT GAGAL'); 
+                    alert('NIK SUDAH TERDAFTAR'); 
                     </script>";
 
 };
-header("Location:read.php");
+
 ?>
