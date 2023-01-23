@@ -52,9 +52,9 @@ if (!isset($_SESSION['username'])) {
                     </select>
                     <select name="type" class="form-select p-0" aria-label="Default select example" required>
                         <option value="">Jenis Vaksin</option>
-                        <option value="vaksin1">Vaksin 1</option>
-                        <option value="vaksin2">Vaksin 2</option>
-                        <option value="booster">Booster</option>
+                        <option value="Vaksin 1">Vaksin 1</option>
+                        <option value="Vaksin 2">Vaksin 2</option>
+                        <option value="Booster">Booster</option>
                     </select>
                     <input class="submit" type='submit' value='SUBMIT'></td>
                     <a class="m-1 text-danger text-end" target="_blank" href="logout.php">Logout</a>

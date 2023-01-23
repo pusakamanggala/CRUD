@@ -9,5 +9,17 @@ $nik = $_GET['nik'];
 $result = mysqli_query($koneksi, "DELETE FROM users WHERE nik=$nik");
  
 // After delete redirect to Home, so that latest user list will be displayed.
-header("Location:read.php");
+
+
+if($result){
+    echo "<script> 
+                    alert('DELETE BERHASIL'); 
+                    </script>";
+                    header("Location:read.php");
+} else {
+    echo "<script> 
+                    alert('SERTIFIKAT SUDAH TERGENERATE | DATA TIDAK BISA DIHAPUS'); 
+                    </script>";
+                
+};
 ?>

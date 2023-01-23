@@ -17,7 +17,7 @@ if ($koneksi->query($simpan)) {
     echo "<script> 
                     alert('SUBMIT BERHASIL'); 
                     </script>";
-                    header("Location:create_sertif.php");
+                    header("Location:read_sertif.php?nik=$varnik");
 } else {
     echo "<script> 
                     alert('NIK TIDAK DITEMUKAN ATAU SERTIFIKAT SUDAH DIBUAT'); 
