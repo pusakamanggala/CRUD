@@ -17,9 +17,6 @@ if($result){
                     </script>";
                     header("Location:read.php");
 } else {
-    echo "<script> 
-                    alert('SERTIFIKAT SUDAH TERGENERATE | DATA TIDAK BISA DIHAPUS'); 
-                    </script>";
-                
+    header("Location:cant_be_deleted.php");
 };
 ?>
