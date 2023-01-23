@@ -49,6 +49,8 @@ $result = mysqli_query($koneksi, "SELECT * FROM users");
   $pdf->Cell(95,7, 'TEMPAT VAKSIN',1,0);
   $pdf->Cell(95,7, $vaksin_data['locations'],1,1);
 
+  $pdf->Cell(200,10,'SUDAH DIVAKSIN',0,0,'C');
+
 
  
 $pdf->Output();
