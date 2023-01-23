@@ -1,98 +1,98 @@
-    body {
-        background: linear-gradient(#98d5dd, #58a7cc, #00adad);
-    }
-    
-    .box {
-        height: 90vh;
-        max-height: 90vh;
-    }
-    
-    .col img {
-        width: 100%;
-        object-fit: cover;
-        height: 600px;
-    }
-    
-    .form-select,
-    input[type="date"],
-    input[type="email"],
-    input[type="number"],
-    input[type="text"] {
-        color: white;
-        background-color: #09afa7;
-        border: none;
-        border-bottom: 1px solid white;
-    }
-    
-    .submit {
-        background-color: #4288b6;
-        color: white;
-        border-radius: 30px;
-        width: 100px;
-        height: 40px;
-    }
-    
-    .view:hover,
-    .submit:hover,
-    .update:hover,
-    .delete:hover {
-        opacity: 0.5;
-        color: white;
-    }
-    
-    .update,
-    .delete {
-        background-color: #4288b6;
-        color: white;
-        border-radius: 10px;
-        width: 90px;
-        height: 30px;
-        font-size: 10px;
-        margin-right: 20px;
-        float: left;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-    }
-    
-    .view {
-        background-color: #4288b6;
-        color: white;
-        border-radius: 10px;
-        width: 820px;
-        height: 40px;
-        display: flex;
-        justify-content: center;
-        margin: 0px auto;
-        margin-bottom: 20px;
-    }
-    
-    .row {
-        border-radius: 9px;
-        overflow: hidden;
-        box-shadow: -2px -1px 13px -1px rgba(0, 0, 0, 0.54);
-        -webkit-box-shadow: -2px -1px 13px -1px rgba(0, 0, 0, 0.54);
-        -moz-box-shadow: -2px -1px 13px -1px rgba(0, 0, 0, 0.54);
-    }
-    
-     ::placeholder {
-        color: white;
-    }
-    
-     ::-webkit-calendar-picker-indicator {
-        filter: invert(1);
-    }
-    
-    .bg-dark {
-        background-color: #09afa7!important;
-    }
-    
-    .container {
-        max-width: 1280px;
-        display: flex;
-    }
-    
-    .btn {
-        color: white;
-    }
+.mainwrap {
+  background: linear-gradient(#98d5dd, #58a7cc, #00adad);
+}
+
+.box {
+  height: 90vh;
+  max-height: 90vh;
+}
+
+.col img {
+  width: 100%;
+  object-fit: cover;
+  height: 600px;
+}
+
+.form-select,
+input[type="date"],
+input[type="email"],
+input[type="number"],
+input[type="text"] {
+  color: white;
+  background-color: #09afa7;
+  border: none;
+  border-bottom: 1px solid white;
+}
+
+.submit {
+  background-color: #4288b6;
+  color: white;
+  border-radius: 30px;
+  width: 100px;
+  height: 40px;
+}
+
+.view:hover,
+.submit:hover,
+.update:hover,
+.delete:hover {
+  opacity: 0.5;
+  color: white;
+}
+
+.update,
+.delete {
+  background-color: #4288b6;
+  color: white;
+  border-radius: 10px;
+  width: 90px;
+  height: 30px;
+  font-size: 10px;
+  margin-right: 20px;
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.view {
+  background-color: #4288b6;
+  color: white;
+  border-radius: 10px;
+  width: 820px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  margin: 0px auto;
+  margin-bottom: 20px;
+}
+
+.row {
+  border-radius: 9px;
+  overflow: hidden;
+  box-shadow: -2px -1px 13px -1px rgba(0, 0, 0, 0.54);
+  -webkit-box-shadow: -2px -1px 13px -1px rgba(0, 0, 0, 0.54);
+  -moz-box-shadow: -2px -1px 13px -1px rgba(0, 0, 0, 0.54);
+}
+
+::placeholder {
+  color: white;
+}
+
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+.bg-dark {
+  background-color: #09afa7 !important;
+}
+
+.container {
+  max-width: 1280px;
+  display: flex;
+}
+
+.btn {
+  color: white;
+}
