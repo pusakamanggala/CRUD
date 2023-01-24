@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 23, 2023 at 12:30 PM
+-- Generation Time: Jan 24, 2023 at 07:34 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -59,7 +59,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`nik`, `nama`, `alamat`, `no_hp`, `status_sertif`) VALUES
-('3626307959869261', 'John Doe', 'Jalan kota menuju kampung', '083131827492', 0);
+('3626307959869261', 'John Doe', 'Jalan kampung menuju kota', '083131827492', 0);
 
 -- --------------------------------------------------------
 
@@ -91,7 +91,8 @@ INSERT INTO `vaksin` (`id`, `nik`, `type`, `date`, `batch`, `locations`) VALUES
 -- Indexes for table `login`
 --
 ALTER TABLE `login`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`);
 
 --
 -- Indexes for table `users`
