@@ -1,6 +1,3 @@
-<!doctype html>
-<html lang="en">
-
 <?php
 session_start();
  
@@ -8,6 +5,8 @@ if (!isset($_SESSION['username'])) {
     header("Location: index.html");
 }
 ?>
+<!doctype html>
+<html lang="en">
 
 <form method='post' action='buat_sertif.php'>
 

@@ -12,10 +12,7 @@ $result = mysqli_query($koneksi, "DELETE FROM users WHERE nik=$nik");
 
 
 if($result){
-    echo "<script> 
-                    alert('DELETE BERHASIL'); 
-                    </script>";
-                    header("Location:read.php");
+   header("Location:read.php");
 } else {
     header("Location:cant_be_deleted.php");
 };

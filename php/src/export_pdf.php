@@ -1,6 +1,6 @@
 <?php
 // memanggil library FPDF
-require('library/fpdf.php');
+require('./library/fpdf.php' );
 include_once("koneksi.php");
  
 // intance object dan memberikan pengaturan halaman PDF

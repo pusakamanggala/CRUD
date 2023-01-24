@@ -2,9 +2,9 @@
 /**
  * using mysqli_connect for database connection
  */
-$servername = "localhost";
-$username = "root";
-$password = "";
+$servername = "mysql";
+$username = "admin";
+$password = "admin";
 $dbnama = "vaksinasi";
 
 

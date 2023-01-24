@@ -1,3 +1,7 @@
+<?php
+	header("Content-type: application/vnd-ms-excel");
+	header("Content-Disposition: attachment; filename=Data-Peserta-Vaksin.xls");
+	?> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,10 +31,7 @@
 	}
 	</style>
  
-	<?php
-	header("Content-type: application/vnd-ms-excel");
-	header("Content-Disposition: attachment; filename=Data-Peserta-Vaksin.xls");
-	?> 
+	
     <?php
 
 ?>
