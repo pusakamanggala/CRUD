@@ -5,17 +5,14 @@ include_once("koneksi.php");
 $varusername = $_POST['username'];
 $varpassword = $_POST['password'];
 
-$save = "INSERT INTO login values ('','$varusername', '$varpassword')";
+$save = "INSERT INTO login (username, password) values ('$varusername', '$varpassword')";
 if ($koneksi->query($save)) {
-    echo "<script> 
-                    alert('SUBMIT BERHASIL'); 
-                    </script>";
-
+    header("Location:index.html");
 } else {
     echo "<script> 
-                    alert('SUBMIT GAGAL'); 
+                    alert('Username sudah ada, silahkan gunakan username lain'); 
                     </script>";
 
 };
-header("Location:index.html");
+
 ?>
