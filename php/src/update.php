@@ -24,7 +24,7 @@ foreach ($db as $data) {
 
         <link rel="stylesheet" href="style.css">
 
-        <title>Edit</title>
+        <title>Edit Data Peserta</title>
     </head>
 
     <body>
