@@ -59,7 +59,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`nik`, `nama`, `alamat`, `no_hp`, `status_sertif`) VALUES
-('3626307959869261', 'John Doe', 'Jalan kampung menuju kota', '083131827492', 0);
+('3626307959869261', 'John Doe', 'Jalan kampung menuju kota', '083131827492', 1);
 
 -- --------------------------------------------------------
 
