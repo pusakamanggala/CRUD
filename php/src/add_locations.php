@@ -66,5 +66,12 @@ if (!isset($_SESSION['username'])) {
 
 </form>
 </form>
+<footer class="bg-light text-center text-lg-start">
+  <!-- Copyright -->
+  <div class="text-center p-3"  style="background-color: white;">
+    @Copyright by 20552011283_Dhia Dzulfiqar Wahdini_Kelas
+  </div>
+  <!-- Copyright -->
+</footer>
 
 </html>

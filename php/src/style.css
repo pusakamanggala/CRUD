@@ -96,3 +96,10 @@ input[type="text"] {
 .btn {
   color: white;
 }
+
+.stickfooter {
+  position: fixed;
+  height: 100px;
+  bottom: 0;
+  width: 100%;
+}
