@@ -2,22 +2,20 @@ version: "3.8"
 services:
   php-apache-environment:
     container_name: php-apache
-    image: php:8.0-apache
+    build: ./php
     volumes:
       - ./php/src:/var/www/html/
     ports:
       - 8000:80
+
   mysql:
     container_name: vaksinasi-db
-    image: mysql
+    build: /Database
     restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: superadmin
-      MYSQL_DATABASE: vaksinasi
-      MYSQL_USER: admin
-      MYSQL_PASSWORD: admin
     ports:
       - "9906:3306"
+    volumes:
+      - ./data/mysql:/var/lib/mysql
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin

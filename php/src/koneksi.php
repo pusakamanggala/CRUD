@@ -3,8 +3,8 @@
  * using mysqli_connect for database connection
  */
 $servername = "mysql";
-$username = "admin";
-$password = "admin";
+$username = "root";
+$password = "superadmin";
 $dbnama = "vaksinasi";
 
 
