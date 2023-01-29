@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jan 24, 2023 at 07:34 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.12
+-- Host: mysql
+-- Waktu pembuatan: 29 Jan 2023 pada 08.25
+-- Versi server: 8.0.32
+-- Versi PHP: 8.0.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,26 +24,44 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `login`
+-- Struktur dari tabel `locations`
+--
+
+CREATE TABLE `locations` (
+  `id` int NOT NULL,
+  `nama_lokasi` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data untuk tabel `locations`
+--
+
+INSERT INTO `locations` (`id`, `nama_lokasi`) VALUES
+(1, 'Telkom University');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `login`
 --
 
 CREATE TABLE `login` (
-  `id` int(20) NOT NULL,
+  `id` int NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `login`
+-- Dumping data untuk tabel `login`
 --
 
 INSERT INTO `login` (`id`, `username`, `password`) VALUES
-(4, 'admin', 'admin');
+(1, 'admin', 'admin');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktur dari tabel `users`
 --
 
 CREATE TABLE `users` (
@@ -55,7 +73,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `users`
+-- Dumping data untuk tabel `users`
 --
 
 INSERT INTO `users` (`nik`, `nama`, `alamat`, `no_hp`, `status_sertif`) VALUES
@@ -64,75 +82,89 @@ INSERT INTO `users` (`nik`, `nama`, `alamat`, `no_hp`, `status_sertif`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vaksin`
+-- Struktur dari tabel `vaksin`
 --
 
 CREATE TABLE `vaksin` (
-  `id` int(20) NOT NULL,
+  `id` int NOT NULL,
   `nik` varchar(20) NOT NULL,
   `type` varchar(10) NOT NULL,
   `date` varchar(10) NOT NULL,
-  `batch` int(5) NOT NULL,
-  `locations` varchar(20) NOT NULL
+  `batch` int NOT NULL,
+  `locations_id` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `vaksin`
+-- Dumping data untuk tabel `vaksin`
 --
 
-INSERT INTO `vaksin` (`id`, `nik`, `type`, `date`, `batch`, `locations`) VALUES
-(19, '3626307959869261', 'Vaksin 2', '2023-02-17', 3, 'Telkom University');
+INSERT INTO `vaksin` (`id`, `nik`, `type`, `date`, `batch`, `locations_id`) VALUES
+(1, '3626307959869261', 'vaksin1', '2023-01-03', 1, 1);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `login`
+-- Indeks untuk tabel `locations`
+--
+ALTER TABLE `locations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `login`
 --
 ALTER TABLE `login`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `username` (`username`);
 
 --
--- Indexes for table `users`
+-- Indeks untuk tabel `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`nik`);
 
 --
--- Indexes for table `vaksin`
+-- Indeks untuk tabel `vaksin`
 --
 ALTER TABLE `vaksin`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `nik_2` (`nik`),
-  ADD KEY `nik` (`nik`);
+  ADD KEY `nik` (`nik`),
+  ADD KEY `locations_id` (`locations_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `login`
+-- AUTO_INCREMENT untuk tabel `locations`
+--
+ALTER TABLE `locations`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT untuk tabel `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `vaksin`
+-- AUTO_INCREMENT untuk tabel `vaksin`
 --
 ALTER TABLE `vaksin`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `vaksin`
+-- Ketidakleluasaan untuk tabel `vaksin`
 --
 ALTER TABLE `vaksin`
-  ADD CONSTRAINT `vaksin_ibfk_1` FOREIGN KEY (`nik`) REFERENCES `users` (`nik`);
+  ADD CONSTRAINT `vaksin_ibfk_1` FOREIGN KEY (`nik`) REFERENCES `users` (`nik`),
+  ADD CONSTRAINT `vaksin_ibfk_2` FOREIGN KEY (`locations_id`) REFERENCES `locations` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
