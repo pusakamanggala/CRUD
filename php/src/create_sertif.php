@@ -52,7 +52,7 @@ if (!isset($_SESSION['username'])) {
                     <select name="location" class="form-select p-0" aria-label="Default select example" required>
                         <option value="">Lokasi Vaksinasi</option>
                     <?php while($lokasi = mysqli_fetch_array($locations)) {
-                        echo "<option value='$lokasi[nama_lokasi]'>$lokasi[nama_lokasi]</option>";
+                        echo "<option value= $lokasi[id] >$lokasi[nama_lokasi]</option>";
                     } ?>
                     </select>
                     <select name="type" class="form-select p-0" aria-label="Default select example" required>

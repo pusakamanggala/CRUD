@@ -16,6 +16,10 @@ foreach ($vaksindb as $vaksin_data) {
 foreach ($db as $user_data) {
 }
 
+$lokasidb = mysqli_query($koneksi, "SELECT * FROM locations WHERE id= $vaksin_data[locations_id]");
+foreach ($lokasidb as $lokasi) {
+}
+
 
 // intance object dan memberikan pengaturan halaman PDF
 $pdf=new FPDF('P','mm','A4');
@@ -47,7 +51,7 @@ $result = mysqli_query($koneksi, "SELECT * FROM users");
   $pdf->Cell(95,7, 'TANGGAL VAKSIN',1,0);
   $pdf->Cell(95,7, $vaksin_data['date'],1,1);
   $pdf->Cell(95,7, 'TEMPAT VAKSIN',1,0);
-  $pdf->Cell(95,7, $vaksin_data['locations'],1,1);
+  $pdf->Cell(95,7, $lokasi['nama_lokasi'],1,1);
 
   $pdf->Cell(200,10,'SUDAH DIVAKSIN',0,0,'C');
 

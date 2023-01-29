@@ -10,7 +10,7 @@ $vartype = $_POST['type'];
 
 // $simpan = "INSERT into vaksin values ('', '$varnik', '$vartype', '$vardate', '$intbatch', '$varlocation')";
 
-$simpan = "INSERT INTO vaksin ( nik, type, date, batch, locations ) VALUES ('$varnik', '$vartype', '$vardate', '$intbatch', '$varlocation')";
+$simpan = "INSERT INTO vaksin ( nik, type, date, batch, locations_id ) VALUES ('$varnik', '$vartype', '$vardate', '$intbatch', '$varlocation')";
 
 
 if ($koneksi->query($simpan)) {

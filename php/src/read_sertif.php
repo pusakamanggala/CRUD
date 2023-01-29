@@ -7,6 +7,8 @@ $db = mysqli_query($koneksi, "SELECT * FROM users WHERE nik= $nik");
 
 $vaksindb = mysqli_query($koneksi, "SELECT * FROM vaksin WHERE nik= $nik");
 
+
+
 if (mysqli_num_rows($vaksindb) == 0) {
     header("Location: sertif_notfound.php");
 }
@@ -14,6 +16,10 @@ if (mysqli_num_rows($vaksindb) == 0) {
 foreach ($db as $user_data) {
 }
 foreach ($vaksindb as $vaksin_data) {
+}
+
+$lokasidb = mysqli_query($koneksi, "SELECT * FROM locations WHERE id= $vaksin_data[locations_id]");
+foreach ($lokasidb as $lokasi) {
 }
 
 session_start();
@@ -57,15 +63,14 @@ if (!isset($_SESSION['username'])) {
                 </tr>
             </thead>
             <tbody>
-            <?php 
-                  
+            <?php     
                         echo "<tr> <td> NIK </td> <td>" . $user_data['nik'] . "</td> </tr>";
                         echo "<tr> <td> Nama </td> <td>" . $user_data['nama'] . "</td> </tr>";
                         echo "<tr> <td> No HP </td> <td>" . $user_data['no_hp'] . "</td> </tr>";
                         echo "<tr> <td> Alamat </td> <td>" . $user_data['alamat'] . "</td> </tr>";
                         echo "<tr> <td> Jenis Vaksin </td> <td>" . $vaksin_data['type'] . "</td> </tr>";
                         echo "<tr> <td> Tanggal Vaksin </td> <td>" . $vaksin_data['date'] . "</td> </tr>";
-                        echo "<tr> <td> Tempat Vaksin </td> <td>" . $vaksin_data['locations'] . "</td> </tr>";
+                        echo "<tr> <td> Tempat Vaksin </td> <td>" . $lokasi['nama_lokasi'] . "</td> </tr>";
                      ?>
                 
             </tbody>
