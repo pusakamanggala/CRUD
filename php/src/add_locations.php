@@ -1,6 +1,8 @@
 <?php
-session_start();
 
+
+session_start();
+ 
 if (!isset($_SESSION['username'])) {
     header("Location: index.html");
 }
@@ -11,7 +13,7 @@ if (!isset($_SESSION['username'])) {
 
 
 
-<form method='post' action='create.php'>
+<form method='post' action='create_locations.php'>
 
     <head>
         <!-- Required meta tags -->
@@ -25,7 +27,7 @@ if (!isset($_SESSION['username'])) {
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
-        <title>Registrasi Vaksinasi</title>
+        <title>Tambah Lokasi Vaksin</title>
     </head>
 
     <body class="mainwrap">
@@ -38,16 +40,9 @@ if (!isset($_SESSION['username'])) {
 
                 </div>
                 <div class="col p-5 bg-dark text-white d-flex flex-column justify-content-center gap-4">
-                    <h2 class="mb-4">Registrasi Vaksinasi</h2>
-                    <input type="text" name="name" placeholder="Nama Lengkap" id="" required>
-                    
-                    <input type="number" name="nik" placeholder="Nomor Induk Kependudukan" id="" required>
-                    </select>
-
-                    <input type="number" name="phone" placeholder="No Hp" id="" required>
-                    <input type="text" name="alamat" placeholder="Alamat" id="" required>
+                    <h2 class="mb-4">Tambah Lokasi Vaksin</h2>
+                    <input type="text" name="locations" placeholder="Lokasi Vaksin" id="" required>
                     <input class="submit" type='submit' value='SUBMIT'></td>
-                    <a class="m-1 text-danger text-end" target="_blank" href="logout.php">Logout</a>
                 </div>
             </div>
         </div>
@@ -70,12 +65,6 @@ if (!isset($_SESSION['username'])) {
     </div>
 
 </form>
-</form>
-<form method="get" action="add_locations.php">
-    <div class="container">
-        <input class="view" type='submit' value='Tambah Lokasi Vaksin'></td>
-    </div>
-
 </form>
 
 </html>

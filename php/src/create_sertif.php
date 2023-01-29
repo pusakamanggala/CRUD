@@ -1,4 +1,11 @@
 <?php
+
+// Create database connection using config file
+include_once("koneksi.php");
+
+// Fetch all users data from database
+$locations = mysqli_query($koneksi, "SELECT * FROM locations");
+
 session_start();
  
 if (!isset($_SESSION['username'])) {
@@ -44,10 +51,9 @@ if (!isset($_SESSION['username'])) {
                     <input type="number" name="batch" placeholder="Batch Vaksinasi" id="" required>
                     <select name="location" class="form-select p-0" aria-label="Default select example" required>
                         <option value="">Lokasi Vaksinasi</option>
-                        <option value="Telkom University">Telkom University</option>
-                        <option value="BBKPM Bandung">BBKPM Bandung</option>
-                        <option value="KKP Kelas 1 Bandung">KKP Kelas 1 Bandung</option>
-                        <option value="RSKIA Bandung">RSKIA Bandung</option>
+                    <?php while($lokasi = mysqli_fetch_array($locations)) {
+                        echo "<option value='$lokasi[nama_lokasi]'>$lokasi[nama_lokasi]</option>";
+                    } ?>
                     </select>
                     <select name="type" class="form-select p-0" aria-label="Default select example" required>
                         <option value="">Jenis Vaksin</option>
@@ -67,11 +73,16 @@ if (!isset($_SESSION['username'])) {
             </script>
     </body>
 </form>
+<form method="get" action="add_locations.php">
+    <div class="container">
+        <input class="view" type='submit' value='Tambah Lokasi Vaksin'></td>
+    </div>
+
+</form>
 <form method="get" action="read.php">
     <div class="container">
         <input class="view" type='submit' value='Lihat Data Peserta'></td>
     </div>
-
 </form>
 
 </html>
